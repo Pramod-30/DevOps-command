@@ -1,0 +1,8 @@
+**************************************************In-Git-Commands****************************************************
+touch <file_name-with-ext>
+touch <fl1> <fl2> <fl2> .......
+vi <file-name>
+echo "content" > <file_name>	// to overwrite the content of file
+echo "content" >><file_name>	// to append the content of the file
+cat <file_name>
+*********************************************************************************************************************
