@@ -1,0 +1,29 @@
+************************************Git Commands*************************************
+git init
+git add <file-name>
+git add .
+git commit -m "message_name"
+git push --global user.email
+git push --global user.name
+git remote -v
+git remote add <allias-name> <repository-url>
+git push <allias-name> master
+git status
+git log
+git log --oneline
+git reset --hard HEAD~<line-no>
+git reset --soft HEAD~<line-no>
+git revert <branch-name>
+git checkout <branch-name>
+git switch <branch-name>
+git diff <from-branch> <to-branch> // origin/master master
+git branch
+git branch <branch-name>
+git merge <branch-name>
+git tag <tag-name>
+git tag <tag-name> <commit-id>
+git tag --help
+git push <alias-name> <tag-name>
+git push <aias-name> tags //to add all tags
+
+************************************************************************************
