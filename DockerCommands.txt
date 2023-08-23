@@ -1,0 +1,13 @@
+***********************************Docker Commands***********************************
+docker --version
+docker ps
+docker ps -a
+docker images
+docker pull <image-name> 		//ex: httpd for <image-name>
+docker run -it -d <image-name>		
+docker start <container-id>
+docker stop <container-id>
+docker rm <docker-container-id>
+docker rmi <docker-image-id>
+docker login
+docker push <Docker-hub-repository-name>
