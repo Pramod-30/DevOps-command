@@ -1,8 +1,8 @@
-***********************************Docker Commands***********************************
+***********************************Docker Commands************************************
 docker --version
-docker ps
-docker ps -a
-docker images
+docker ps				//to check the checking containers
+docker ps -a				//to check the removed containers
+docker images				//to check the docker-images that are running
 docker pull <image-name> 		//ex: httpd for <image-name>
 docker run -it -d <image-name>		
 docker start <container-id>
@@ -11,3 +11,11 @@ docker rm <docker-container-id>
 docker rmi <docker-image-id>
 docker login
 docker push <Docker-hub-repository-name>
+docker pull nginx
+docker run -it -d ngnix
+docker run -it -d -p 8000:80 ngnix	//(3000-9000 port nors)/default 80 for tcp
+docker pull amazonlinux
+docker run -it -d amazonlinux
+docker exec -it <container-id> /bin/bash
+docker build -t pramod/name Dockerfile/
+docker exec -it <image-id> /bin/bash
