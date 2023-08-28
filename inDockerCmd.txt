@@ -1,0 +1,38 @@
+*************************************In-Docker-Commands*******************************
+*************************************Docker-Environment-setup********************************
+vi docker.sh
+sudo su -
+->should be typed in docker.sh
+sudo yum update -y
+sudo yum search docker
+sudo yum info docker
+sudo yum install -y docker
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo systemctl status docker.service
+sudo yum install git -y
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+<-
+*******************************Docker-tomcat-running**********************************
+yum install wget -y
+wget <tomcat-download-link>
+yum install tar -y
+yum install gzip -y
+yum install java -y
+tar -zxvf <tomcat-zip-download>
+cd apache-tomcat-9.0.79
+cd /bin
+sh startup.sh
+
+*********************Commands-Used-While-Creating-Docker-File************************
+FROM amazonlinux
+MAINTAINER "docker-mail-id"
+RUN yum install -y wget
+RUN yum install -y tar
+RUN yum install -y gzip
+RUN wget https://ddln.apache-tomcat-9.0.79.tar.gz
+RUN tar -zxvf apache-tomcat-9.0.79.tar.gz
+RUN yum install -y java
+RUN sh apache-tomcat-9.0.79 /bin/startup.sh
+cd ..
