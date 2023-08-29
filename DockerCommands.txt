@@ -6,10 +6,11 @@ docker images				//to check the docker-images that are running
 docker pull <image-name> 		//ex: httpd for <image-name>
 docker run -it -d <image-name>		
 docker start <container-id>
-docker stop <container-id>
-docker rm <docker-container-id>
-docker rmi <docker-image-id>
-docker login
+docker stop <container-id>		//to stop the running container
+docker rm <docker-container-id>		//to remove/kill the container that is stopped
+dokcer rm --force <container-id>	//to remove the container without stopping it
+docker rmi <docker-image-id>		//to remove the docker-image
+docker login				
 docker push <Docker-hub-repository-name>
 docker pull nginx
 docker run -it -d ngnix
@@ -19,3 +20,23 @@ docker run -it -d amazonlinux
 docker exec -it <container-id> /bin/bash
 docker build -t pramod/name Dockerfile/
 docker exec -it <image-id> /bin/bash
+***********************************Docker-Compose*************************************
+vi docker-compose.yml
+docker-compose up -d			//to run the multiple containers at-a-time
+docker-compose down			//to stop/remove running containers
+***********************************Docker-Volume**************************************
+docker volume create ignite							//to create a named volume volume_name=ignite
+docker volume ls								//to display list of all the volumes present
+docker volume inspect ignite							//to check the volume ignite
+docker volume rm ignite								//to remove/kill the ignite volume
+docker run -it -d -v ignite://usr/local/apache2/htdocs/ httpd			//to run the volume, -v is a flag used to do so
+docker -itd -v ignite://usr/local/apache2/htdocs/ httpd				//to run the volume using (-itd) instead of (-it -d)
+docker container stats								//to check the stats for consumption of cpu, performance, etc
+**********************************Docker-Swarm****************************************
+docker swarm init
+docker node ls										//to check nodes present
+docker node promote <host-name>								//to promote/ provide the permission for other nodes being in master-node to worker-node
+docker node demote <host-name>								//to demote the nodes
+docker service ls									//to list the services
+docker service create --replicas=<nor> --name=<service-name> <image-name>		//docker service create --replicas=2 --name=chat httpd
+docker service scale <service-name>=<nor>						//SCALING docker service scalechat=4 up-scalling and down-scalling done on nor presented
